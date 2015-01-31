@@ -48,3 +48,5 @@ gem 'nokogiri'
 # To use debugger
 # gem 'debugger'
 gem 'haml'
+
+gem 'puma'
