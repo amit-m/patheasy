@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  category: 
+  name: MyString
+  duration_of_rpt: 1
+  clinical_restrictn: 
+  cost_of_text: 1.5
+  specimen_required: MyText
+
+two:
+  category: 
+  name: MyString
+  duration_of_rpt: 1
+  clinical_restrictn: 
+  cost_of_text: 1.5
+  specimen_required: MyText

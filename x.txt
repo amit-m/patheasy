@@ -1,0 +1,47 @@
+            medical_tests GET    /medical_tests(.:format)          medical_tests#index
+                          POST   /medical_tests(.:format)          medical_tests#create
+         new_medical_test GET    /medical_tests/new(.:format)      medical_tests#new
+        edit_medical_test GET    /medical_tests/:id/edit(.:format) medical_tests#edit
+             medical_test GET    /medical_tests/:id(.:format)      medical_tests#show
+                          PUT    /medical_tests/:id(.:format)      medical_tests#update
+                          DELETE /medical_tests/:id(.:format)      medical_tests#destroy
+               categories GET    /categories(.:format)             categories#index
+                          POST   /categories(.:format)             categories#create
+             new_category GET    /categories/new(.:format)         categories#new
+            edit_category GET    /categories/:id/edit(.:format)    categories#edit
+                 category GET    /categories/:id(.:format)         categories#show
+                          PUT    /categories/:id(.:format)         categories#update
+                          DELETE /categories/:id(.:format)         categories#destroy
+                    posts GET    /posts(.:format)                  posts#index
+                          POST   /posts(.:format)                  posts#create
+                 new_post GET    /posts/new(.:format)              posts#new
+                edit_post GET    /posts/:id/edit(.:format)         posts#edit
+                     post GET    /posts/:id(.:format)              posts#show
+                          PUT    /posts/:id(.:format)              posts#update
+                          DELETE /posts/:id(.:format)              posts#destroy
+        new_admin_session GET    /admins/sign_in(.:format)         devise/sessions#new
+            admin_session POST   /admins/sign_in(.:format)         devise/sessions#create
+    destroy_admin_session DELETE /admins/sign_out(.:format)        devise/sessions#destroy
+           admin_password POST   /admins/password(.:format)        devise/passwords#create
+       new_admin_password GET    /admins/password/new(.:format)    devise/passwords#new
+      edit_admin_password GET    /admins/password/edit(.:format)   devise/passwords#edit
+                          PUT    /admins/password(.:format)        devise/passwords#update
+cancel_admin_registration GET    /admins/cancel(.:format)          devise/registrations#cancel
+       admin_registration POST   /admins(.:format)                 devise/registrations#create
+   new_admin_registration GET    /admins/sign_up(.:format)         devise/registrations#new
+  edit_admin_registration GET    /admins/edit(.:format)            devise/registrations#edit
+                          PUT    /admins(.:format)                 devise/registrations#update
+                          DELETE /admins(.:format)                 devise/registrations#destroy
+               home_index GET    /home/index(.:format)             home#index
+    admin_change_password GET    /admin/change_password(.:format)  admin#change_password
+        admin_admin_lists GET    /admin/admin_lists(.:format)      admin#admin_lists
+      admin_save_password GET    /admin/save_password(.:format)    admin#save_password
+          admin_add_admin        /admin/add_admin(.:format)        admin#new
+               edit_admin        /admin/:id/edit(.:format)         admin#edit
+         admin_save_admin        /admin/save_admin(.:format)       admin#save_admin
+             admin_report        /admin/report(.:format)           admin#report
+                          PUT    /admin/save_password(.:format)    admin#save_password
+              admin_block        /admin/block(.:format)            admin#block
+            admin_unblock        /admin/unblock(.:format)          admin#unblock
+             admin_update        /admin/update(.:format)           admin#update
+                     root        /                                 home#index

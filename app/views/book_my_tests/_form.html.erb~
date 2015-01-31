@@ -1,0 +1,134 @@
+<div class="row" >
+  <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+
+<%= form_for(@book_my_test) do |f| %>
+  <% if @book_my_test.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@book_my_test.errors.count, "error") %> prohibited this book_my_test from being saved:</h2>
+
+      <ul>
+      <% @book_my_test.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">        
+       
+        <%= f.text_field :name,:class => 'form-control input-sm',:placeholder => "Patint Name",:autofocus => true , :required => true %>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">        
+        <%= f.text_field :age, :class => 'form-control input-sm', :placeholder => "Patient Age", :tabindex=>"1", :autofocus => true , :required => true, :style=> "margin-left:5px"%>
+      </div>
+    </div>
+</div>
+
+ <div class="form-group">     
+      <%= f.text_area :address, :placeholder => "Address",:class => 'form-control', :tabindex=>"2", :autofocus => true , :required => true, :rows => 3%>
+  </div>
+
+  <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">        
+       <%= f.radio_button :gender, 'Male' %> Male &nbsp;&nbsp;&nbsp;&nbsp;
+       <%= f.radio_button :gender, 'Female' %> Female
+      </div>
+    </div>
+
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">   
+      <%= f.text_field :ref_doc_name,:class => 'form-control input-sm', :placeholder => "Reference Doctor Name", :tabindex=>"1", :autofocus => true , :required => true, :style=> "margin-left:5px" %>     
+      </div>
+    </div>
+</div>
+
+<div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">        
+       
+        <%= f.text_field :mobile,:class => 'form-control input-sm',:placeholder => "Mobile Number",:autofocus => true , :required => true %>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">        
+        <%= f.text_field :alt_mobile_no, :class => 'form-control input-sm', :placeholder => "Alternate Mobile Number", :tabindex=>"1",:style=> "margin-left:5px"%>
+      </div>
+    </div>
+</div>
+  
+  <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">        
+        Home Collection
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">        
+        <%= f.radio_button :home_collection, 'Yes' %> Yes &nbsp;
+        <%= f.radio_button :home_collection, 'No' %> No
+      </div>
+    </div>
+</div>
+<div class="form-group">     
+      <%= f.text_area :coll_add, :placeholder => "Collection Address",:class => 'form-control', :tabindex=>"2", :autofocus => true , :required => true, :rows => 3%>
+  </div>
+
+  <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">        
+       Date Of Sample Collection
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">        
+        <%= f.date_select :date_sample_coll %>
+      </div>
+    </div>
+</div>
+ <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6">
+      <div class="form-group">        
+        <%=f.select :test_id, MedicalTest.all.collect {|c| [ c.name, c.id ]}, {:include_blank => '- Select Test -'}, :class=>"form-control", :required => true %>
+      </div>
+    </div>
+</div>
+<div class="form-actions">
+      <%= f.submit "Book Test", :class => 'btn btn-primary' %>
+      
+    </div>
+<% end %>
+
+</div>
+</div>
+<!--<div class="container">
+	<div class="row">
+		<div id="myModal" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+ 
+                <div class="modal-header">
+                    <a class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span></a>
+                    <h4 class="modal-title" id="myModalLabel">Modal Heading</h4>
+                </div>
+                <div class="modal-body">
+                    <h4>Text in a modal</h4>
+                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+                </div>
+                <div class="modal-footer">
+                    <div class="btn-group">
+                    <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+ 
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dalog -->
+</div><!-- /.modal -->
+    
+<a data-toggle="modal" href="#myModal" class="btn btn-primary">Launch demo modal</a>
+	</div>
+</div> -->

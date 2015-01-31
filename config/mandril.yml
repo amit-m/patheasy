@@ -1,0 +1,10 @@
+development: 
+  user_name:  "deepak@circarconsulting.com"
+  password:   "Y2X07vTr1GuID5_jCnqf2A"            
+test:
+  user_name:  "deepak@circarconsulting.com"
+  password:   "Y2X07vTr1GuID5_jCnqf2A"
+production:
+  user_name:  "deepak@circarconsulting.com"
+  password:   "Y2X07vTr1GuID5_jCnqf2A"
+  
