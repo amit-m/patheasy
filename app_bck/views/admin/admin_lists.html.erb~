@@ -1,0 +1,53 @@
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to "Create Administrator",
+            admin_add_admin_path,
+            :class => 'btn btn-primary' %>
+  </div>
+  <h1>Admin List</h1>
+</div>
+<table class="table table-striped table-bordered" id="adminlist">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Designation</th>
+      <th>Address</th>
+      <th>Employee ID</th>
+      <th>DOJ</th>
+      <th>UserID </th>      
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admins.each do |admin| %>
+      <tr>   
+        <td><%= admin.name %></td>
+        <td><%= admin.designation %></td>
+        <td><%= admin.residential_address %></td>
+        <td><%= admin.emp_id %></td>
+        <td><%= admin.doj.strftime("%Y-%m-%d") if admin.doj %></td>
+        <td><%= admin.user_id %></td>       
+        <td>
+          <%= link_to "Block",
+                      admin_block_path(:id=>admin.id), :title => "Block",:class => 'btn btn-default btn-xs'unless admin.is_block %>
+	<%= link_to "UnBlock",
+                      admin_unblock_path(:id=>admin.id),:title => "UnBlock", :class => 'btn btn-default btn-xs'if admin.is_block %>
+          <%= link_to "Modify",
+                      edit_admin_path(admin), :title => "Modify", :class => 'btn btn-primary btn-xs' %>
+          <%#= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      academic_path(academic),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<script>
+$(function() {    
+    $('#adminlist').dataTable();
+});
+</script>
+

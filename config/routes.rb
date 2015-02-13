@@ -1,4 +1,6 @@
 Patheasy::Application.routes.draw do
+  devise_for :doctors
+
   resources :medical_tests
 
   resources :book_my_tests
@@ -12,8 +14,16 @@ Patheasy::Application.routes.draw do
 
   get "home/index"
   get "admin/change_password"
+  get "admin/doc_change_password"
   get "admin/admin_lists"
+  get "home/hospital_list"
+  get "home/chemist_list"
+  get "home/doctor_list"
+  get "home/nurshing_home_list"
+  get "home/report"
+  get "admin/doc_lists"
   get "admin/save_password"
+get "admin/doc_save_password"
 #  put "admin/update_admin"
 #  post "admin/update_admin"
 #  get "admin/update_info"
@@ -26,8 +36,14 @@ Patheasy::Application.routes.draw do
 
   # Sample of named route:
     match '/admin/add_admin' => 'admin#new'
-    match '/admin/:id/edit' => 'admin#edit', as: :edit_admin
-    
+    match '/admin/:id/doc_edit' => 'admin#doc_edit', as: :edit_admin
+   
+    match '/admin/add_doc' => 'admin#doc_new'
+    match '/admin/:id/doc_edit' => 'admin#doc_edit', as: :doc_edit_admin
+   match '/admin/save_doc' => 'admin#save_doc'
+   match '/admin/doc_update' => 'admin#doc_update'
+    match '/admin/doc_save_password' => 'admin#doc_save_password'
+
      match '/admin/save_admin' => 'admin#save_admin'
      match '/admin/report' => 'admin#report'
      match '/admin/test_req_detail/:id' => 'admin#test_req_detail'

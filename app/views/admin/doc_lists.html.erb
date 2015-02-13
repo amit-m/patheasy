@@ -1,0 +1,56 @@
+<div class="page-header">
+  <div class="pull-right">
+    <%= link_to "Create Doctor",
+            admin_add_doc_path,
+            :class => 'btn btn-primary' %>
+  </div>
+  <h1>Doctor List</h1>
+</div>
+<table class="table table-striped table-bordered" id="doclist">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Designation</th>
+      <th>Address</th>
+      <th>Doc ID</th>
+      <th>Phone#</th>      
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @docs.each do |doc| %>
+      <tr>   
+        <td><%= doc.name %></td>
+        <td><%= doc.desgination %></td>
+        <td><%= doc.address %></td>
+        <td><%= doc.doc_id %></td>
+        <td><%= doc.phone_no%></td>
+              
+        <td>
+          <%#= link_to "Block",
+                      admin_block_path(:id=>admin.id), :title => "Block",:class => 'btn btn-default btn-xs'unless admin.is_block %>
+	<%#= link_to "UnBlock",
+                      admin_unblock_path(:id=>admin.id),:title => "UnBlock", :class => 'btn btn-default btn-xs'if admin.is_block %>
+          <%= link_to "Modify",
+                      doc_edit_admin_path(doc), :title => "Modify", :class => 'btn btn-primary btn-xs' %>
+          <%#= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      academic_path(academic),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<script>
+$(function() {    
+    $('#doclist').dataTable();
+ 
+ 
+ });
+
+
+</script>
+

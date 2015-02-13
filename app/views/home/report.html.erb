@@ -1,0 +1,50 @@
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+     <div class="panel-heading"><h4>Patient Information</h4></div>
+    <table class="table table-striped table-stats table-condensed table-hover">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Sex</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>Doctor</th>
+        <th>Total Amount</th>
+        <th>Amount Paid</th>
+        <th>Net Amount</th>
+        <th>Report Time</th>
+        <th>Urgent</th>
+        <th>Date</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @patients.each do |patient| %>
+          <tr>
+            <td><%= patient['id_no1'].text %>-<%= patient['id_no2'].text %></td>
+            <td width="15%"><%= patient['fname'].text %> <%= patient['lname'].text %></td>
+            <td><%= patient['sex'].text %></td>
+            <td><%= patient['age'].text %></td>
+            <td width="25%"><%= patient['addr1'].text %> <%= patient['addr2'].text %> <%= patient['addr3'].text %></td>
+            <td><%=  patient['doctcode'].text %></td>
+            <td><%=  patient['tot_amt'].text %></td>
+            <td><%=  patient['amt_paid'].text %></td>
+            <td><%=  patient['net_amt'].text %></td>
+            <td><%=  patient['rp_time'].text %></td>
+            <td>
+              <% if  patient['urgnt'].text == "true" %>
+                Yes
+              <% else %>
+              No
+              <% end %>
+            </td>
+            <td><%=  patient['t_date'].text.to_date.strftime("%m-%e-%y %l:%M %p") %></td>
+          </tr>
+      <% end %>
+      </tbody><!--End table body-->
+    </table><!--End table -->
+</div>
+  </div><!--End col-md-12 -->
+</div><!--End row-->

@@ -1,0 +1,49 @@
+<%- model_class = MedicalTest -%>
+<div class="page-header">
+  <h1>Test Lists</h1>
+</div>
+<table class="table table-striped table-bordered" id="medtestlist">
+  <thead>
+    <tr>     
+      <th><%= model_class.human_attribute_name(:category_id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:duration_of_rpt) %></th>
+      <th><%= model_class.human_attribute_name(:clinical_restrictn) %></th>
+      <th><%= model_class.human_attribute_name(:cost_of_text) %></th>
+      <th><%= model_class.human_attribute_name(:specimen_required) %></th>
+      
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @medical_tests.each do |medical_test| %>
+      <tr>      
+        <td><%= link_to medical_test.category.name, medical_test_path(medical_test) %></td>
+        <td><%= medical_test.name %></td>
+        <td><%= medical_test.duration_of_rpt %></td>
+        <td><%= medical_test.clinical_restrictn %></td>
+        <td><%= medical_test.cost_of_text %></td>
+        <td><%= medical_test.specimen_required %></td>
+        
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_medical_test_path(medical_test), :class => 'btn btn-primary btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      medical_test_path(medical_test),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-danger btn-xs' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Create New",
+            new_medical_test_path,
+            :class => 'btn btn-primary' %>
+<script>
+$(function() {    
+    $('#medtestlist').dataTable();
+});
+</script>

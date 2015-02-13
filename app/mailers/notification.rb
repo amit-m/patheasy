@@ -10,6 +10,10 @@ class Notification < ActionMailer::Base
     mail(:to => user.email, :subject => "Your Login Credentials")  
   end  
 
-
+ def send_login_cred_to_doc(doc,pwd)
+        @docid = doc.doc_id
+ 	@pwd = pwd
+        mail(:to => doc.email, :subject => "Your Login Credentials") 
+ end
 
 end

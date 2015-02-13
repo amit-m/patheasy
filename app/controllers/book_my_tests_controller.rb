@@ -13,6 +13,38 @@ class BookMyTestsController < ApplicationController
   end
 
   def new
+    
+    
+    
+    #require 'rubygems'
+ 
+    #require 'roo'
+
+   #ex = Roo::Excel.new("#{Rails.root}/public/Kolkata Guide.xls")
+
+    #ex.default_sheet = ex.sheets[3] #Mention the sheet number
+
+    #2.upto(96) do |line| #start and end of row
+    # name = ex.cell(line,'B')
+    # adr = ex.cell(line,'C')
+    # ph1 = ex.cell(line,'D').floor if ex.cell(line,'D').present?
+    # ph2 = ex.cell(line,'E').floor if ex.cell(line,'E').present?
+     #ph3 = ex.cell(line,'F').floor if ex.cell(line,'F').present?
+     #ph4 = ex.cell(line,'G').floor if ex.cell(line,'G').present?
+     #ph5 = ex.cell(line,'H').floor if ex.cell(line,'H').present?
+     #ph6 = ex.cell(line,'I').floor if ex.cell(line,'I').present?
+     #ph7 = ex.cell(line,'J').floor if ex.cell(line,'J').present?
+
+     #phone = ph1.to_s + "," + ph2.to_s + "," + ph3.to_s + "," + ph4.to_s + "," + ph5.to_s + "," + ph6.to_s + "," + ph7.to_s
+     #puts "############################################"
+    # p name
+    
+    # p phone
+     
+     
+     #@hos = NurshingHome.create(:name => name,:address => adr,:contact_no => phone)
+
+   #end
     @book_my_test = BookMyTest.new
     respond_with(@book_my_test)
   end

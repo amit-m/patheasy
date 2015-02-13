@@ -1,0 +1,43 @@
+<h1>Listing book_my_tests</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Address</th>
+    <th>Mobile</th>
+    <th>Alt mobile no</th>
+    <th>Ref doc name</th>
+    <th>Home collection</th>
+    <th>Coll add</th>
+    <th>Date sample coll</th>
+    <th>Test</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @book_my_tests.each do |book_my_test| %>
+  <tr>
+    <td><%= book_my_test.name %></td>
+    <td><%= book_my_test.age %></td>
+    <td><%= book_my_test.gender %></td>
+    <td><%= book_my_test.address %></td>
+    <td><%= book_my_test.mobile %></td>
+    <td><%= book_my_test.alt_mobile_no %></td>
+    <td><%= book_my_test.ref_doc_name %></td>
+    <td><%= book_my_test.home_collection %></td>
+    <td><%= book_my_test.coll_add %></td>
+    <td><%= book_my_test.date_sample_coll %></td>
+    <td><%= book_my_test.test_id %></td>
+    <td><%= link_to 'Show', book_my_test %></td>
+    <td><%= link_to 'Edit', edit_book_my_test_path(book_my_test) %></td>
+    <td><%= link_to 'Destroy', book_my_test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Book my test', new_book_my_test_path %>

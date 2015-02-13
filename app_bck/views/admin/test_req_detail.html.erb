@@ -1,0 +1,97 @@
+<div><h2>Sigma Lab & Diagnostic</h2></div>
+<p>109,A.J.C Bose Road,Kolkata-700014 ,ph:(033)2265-0009/10,email: sigmadiagno@gmail.com</p>
+<hr>
+<br>
+<p><b>Test Category:</b>  <%=@test_req.medical_test.category.name%></p>
+<br>
+<table cellspacing="25" cellpadding="25" width="100%" style="margin-left:8%">
+  <tr>
+     <td>
+       <b>Patient Name<b>
+     </td>
+     <td>
+       : <%=@test_req.name.capitalize%>
+     </td>
+  </tr> 
+  <tr>
+     <td>
+       <b>Gender<b>
+     </td>
+     <td>
+       : <%=@test_req.gender%>
+     </td>
+  </tr> 
+  <tr>
+     <td>
+       <b>Patient Age</b>
+     </td>
+     <td>
+       : <%=@test_req.age%>
+     </td>
+  </tr> 
+  <tr>
+     <td>
+       <b>Test Name</b>
+     </td>
+     <td>
+       : <%=@test_req.medical_test.name%>
+     </td>
+  </tr> 
+  <tr>
+     <td>
+       <b>Phone No#</b>
+     </td>
+     <td>
+       : <%=@test_req.mobile%>
+     </td>
+  </tr> 
+  <tr>
+     <td>
+       <b>Alt. Phone No#</b>
+     </td>
+     <td>
+       : <%=@test_req.alt_mobile_no%>
+     </td>
+  </tr> 
+   
+  <tr>
+     <td>
+       <b>Address</b>
+     </td>
+     <td>
+       : <%=@test_req.address%>
+     </td>
+  </tr> 
+  <tr>
+     <td>
+       <b>Refee Doctor</b>
+     </td>
+     <td>
+       : <%=@test_req.ref_doc_name%>
+     </td>
+  </tr> 
+  <tr>
+     <td>
+       <b>Home Collection</b>
+     </td>
+     <td>
+       : <%=@test_req.home_collection%>
+     </td>
+  </tr> 
+  <tr>
+     <td>
+       <b>Collection Add.</b>
+     </td>
+     <td>
+       : <%=@test_req.coll_add%>
+     </td>
+  </tr> 
+   <tr>
+     <td>
+       <b>Date Of Sample Coll.</b>
+     </td>
+     <td>
+       : <%=@test_req.date_sample_coll.strftime('%b %d, %Y')%>
+     </td>
+  </tr> 
+</table>  

@@ -15,8 +15,7 @@
     <%= stylesheet_link_tag "united", :media => "all" %>
 
     <%= yield(:page_stylesheet) if content_for?(:page_stylesheet) %>
-   
-  </head>
+ </head>
   <body>
   
 
@@ -35,16 +34,18 @@
           
 
          <ul class="nav navbar-nav navbar-right">
-                 
+                  
                  <% if admin_signed_in? %>   
 		    <li><%=link_to "Create New Test" ,new_medical_test_path%></li>
                 <li><%=link_to "Test Requests" ,admin_test_requests_path%></li>
-                    <li><%=link_to "Report" ,"/admin/report.pdf"%></li>
+                    <li><%=link_to "Report" ,home_report_path%></li>
                    <li class="dropdown">                      <a data-toggle="dropdown" class="dropdown-toggle" href="#">Hi, <%=current_admin.name%> <b class="caret"></b></a>
                       <ul class="dropdown-menu">
                         <%#= current_admin.is_super_admin? %>
                       <%if current_admin.is_super_admin?%>
                         <li><%= link_to "Manage Admins", admin_admin_lists_path %></li>
+                        <li><%= link_to "Manage Doctors", admin_doc_lists_path %></li>
+
                         <%end%>
 		    <li><%= link_to "Manage Test Categories", categories_path %></li>
                     <li><%= link_to "Change Password", admin_change_password_path %></li>                    
@@ -52,13 +53,34 @@
                     <li><%= link_to "Sign out", destroy_admin_session_path,:method => :delete %></li>
                       </ul>
                     </li>
+                 <%elsif doctor_signed_in? %>
+                       <li class="dropdown"><a data-toggle="dropdown" class="dropdown-toggle" href="#">Hi, <%=current_doctor.name%> <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li><%= link_to "Change Password", admin_doc_change_password_path %></li>                    
+                    <li class="divider"></li>
+                    <li><%= link_to "Sign out", destroy_doctor_session_path,:method => :delete %></li>
+                        </ul>
+                       </li>
+
                  <%else%>    
+                   <li></li> 
+                    <li class="dropdown">
+                      <a data-toggle="dropdown" class="dropdown-toggle" href="#">Information<b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                         <li><%= link_to "Hospitals", home_hospital_list_path %></li>
+                         <li><%= link_to "24 Hours Chemists", home_chemist_list_path %></li>
+                         <li><%= link_to "Doctor Clinics", home_doctor_list_path %></li>
+                         <li><%= link_to "Nurshing Homes", home_nurshing_home_list_path %></li>
+     
+                      </ul>
+                    </li>
                    <li><%= link_to "Book My Test", new_book_my_test_path %></li> 
                   <li class="dropdown">
                       <a data-toggle="dropdown" class="dropdown-toggle" href="#">User Logins <b class="caret"></b></a>
                       <ul class="dropdown-menu">
                          <li><%= link_to "SuperAdmin/Admin Login", new_admin_session_path %></li>
-                        <li><a href="#">Patient Login</a></li>                   
+                        <li><a href="#">Patient Login</a></li>
+                           <li><%= link_to "Doctor Login", new_doctor_session_path %></li>                   
                       </ul>
                     </li>
               <%end%>

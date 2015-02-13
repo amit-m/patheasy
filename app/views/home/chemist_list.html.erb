@@ -1,0 +1,40 @@
+<div class="page-header">
+  
+  <h1>24 Hours Chemist List</h1>
+</div>
+<table class="table table-striped table-bordered" id="chelist">
+  <thead>
+    <tr>
+      <th>Chemist Name</th>
+      <th>Contact#</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @chemists.each do |che| %>
+      <tr>   
+        <td><%= che.name %></td>
+       
+        <td>
+
+         <%che.contact_no.split(',').each do |f|%>
+           <%#if f[i].present?%>
+             <%=f%><br>
+           <%#end%>
+         <%end%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<script>
+$(function() {    
+    $('#chelist').dataTable();
+ 
+ 
+ 
+});
+
+
+</script>
+
