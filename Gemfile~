@@ -30,9 +30,8 @@ gem "devise"
 gem 'bootstrap-datepicker-rails'
 gem 'pdfkit','0.5.4'
 #gem 'wkhtmltopdf-binary'
-gem 'aws-sdk'
+
 gem 'nokogiri'
-gem 'roo'
 #gem "devise"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
