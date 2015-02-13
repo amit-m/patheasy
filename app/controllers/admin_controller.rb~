@@ -17,6 +17,18 @@ class AdminController < ApplicationController
   def edit
      @admin = Admin.find params[:id]
   end
+  
+ def report
+ end
+
+ def test_requests
+    @test_req = BookMyTest.all
+ end
+ 
+  def test_req_detail
+     
+    @test_req = BookMyTest.find(params[:id])
+  end
 
   def save_admin
     @admin = Admin.new(params[:admin])

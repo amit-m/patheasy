@@ -6,6 +6,7 @@ class AdminController < ApplicationController
   def save_password
   end
 
+
   def admin_lists
     @admins = Admin.where(is_superadmin: false).order("current_sign_in_at desc")
   end
