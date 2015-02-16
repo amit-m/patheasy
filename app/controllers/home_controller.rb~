@@ -23,18 +23,10 @@ def report
     #require 'rubygems'
     #require 'aws/s3'
     
-   # AWS::S3::Base.establish_connection!( :access_key_id => "AKIAJ2RC5BMJYI2YWWXQ", :secret_access_key => "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")
+  
 
-   # p AWS::S3::S3Object.open('PATAPN.xml', 'diagnostic123')
 
-    # new_bucket = AWS::S3::Bucket.find('diagnostic123')
-     #new_bucket = AWS::S3::Bucket.find('my-new-bucket')
-     #new_bucket.each do |object|
-      #  puts "################"
-       # puts "#{object.key}\t#{object.about['content-length']}\t#{object.about['last-modified']}"
-     #end
-
-   # p new_bucket
+    
 
     require 'nokogiri'
     #require 'open-uri'
